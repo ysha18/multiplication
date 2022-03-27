@@ -2,6 +2,7 @@ package microservices.book.multiplication.challenge.services;
 import microservices.book.multiplication.challenge.domain.Challenge;
 import org.springframework.stereotype.Service;
 import java.util.Random;
+
 @Service
 public class ChallengeGeneratorServiceImpl implements ChallengeGeneratorService {
     private final Random random;
