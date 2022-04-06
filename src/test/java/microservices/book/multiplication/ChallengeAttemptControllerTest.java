@@ -3,6 +3,7 @@ package microservices.book.multiplication;
 import microservices.book.multiplication.challenge.controllers.ChallengeAttemptController;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.json.AutoConfigureJsonTesters;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -47,7 +48,7 @@ public class ChallengeAttemptControllerTest {
     ChallengeAttempt expectedResponse = new ChallengeAttempt(attemptId, user.getId(), 50, 70, 3500,
         true);
     given(challengeService
-        .verifyAttempt(eq(attemptDTO)))
+        .verifyAttempt(Mockito.eq(attemptDTO)))
         .willReturn(expectedResponse);
 
     // when

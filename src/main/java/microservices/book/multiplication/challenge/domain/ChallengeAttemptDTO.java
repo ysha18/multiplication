@@ -1,5 +1,8 @@
 package microservices.book.multiplication.challenge.domain;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Positive;
 import lombok.Value;
 
 /**
@@ -7,7 +10,9 @@ import lombok.Value;
  */
 @Value
 public class ChallengeAttemptDTO {
+    @Min(1) @Max(99)
     int factorA, factorB;
     String userAlias;
+    @Positive(message = "How could you possibly get a negative result here? Try again.")
     int guess;
 }
